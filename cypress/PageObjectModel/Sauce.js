@@ -17,6 +17,11 @@ class Demo{
         return cy.get('[type="submit"]')
     }
 
+    Verifyhomepage()
+    {
+  return cy.get('[class="app_logo"]')
+    }
+
 }
 
 export default Demo;

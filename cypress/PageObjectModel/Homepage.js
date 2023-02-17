@@ -2,11 +2,6 @@ class Home
 
 {
 
-    Verifyhomepage()
-    {
-  return cy.get('[class="app_logo"]')
-    }
-
     Productone(){
 
         return cy.get("#add-to-cart-sauce-labs-backpack")

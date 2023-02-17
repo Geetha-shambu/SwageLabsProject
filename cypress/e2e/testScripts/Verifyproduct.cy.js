@@ -7,10 +7,10 @@ describe("new application",()=>{
 
     beforeEach(function(){
 
-     cy.visit("https://www.saucedemo.com/")
+      cy.launchApplication() 
       
     })
-   it('Login page',()=>{
+   it('Add two products',()=>{
       cy.fixture("Sauce").then(function(data){
          this.Logindata=data
          const Login=new Demo();
@@ -19,8 +19,10 @@ describe("new application",()=>{
          Login.Setuser().type(this.Logindata.username)
          Login.Setpassword().type(this.Logindata.password)
          Login.Submit().click()
-         //Ln.Verifyhomepage().should('have.text',"SwagLabs")
-         Ln.Productone().click()
+         Login.Verifyhomepage().should('be.visible',"SwagLabs")
+         
+         //Selecting two product and adding to cart//
+         Ln.Productone().click() 
          Ln.Product2().click()
          Ln.Cart().click()
          
